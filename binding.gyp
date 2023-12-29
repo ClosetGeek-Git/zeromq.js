@@ -69,12 +69,13 @@
 
         ["zmq_shared == 'true'", {
           'link_settings': {
-            'libraries': ['-lzmq'],
+            'libraries': ['-lzmq', '-lzmqbridge'],
           },
         }, {
           'conditions': [
             ['OS != "win"', {
               'libraries': [
+                '<(module_root_dir)/build/libzmq/lib/libzmq.a',
                 '<(module_root_dir)/build/libzmq/lib/libzmq.a',
               ],
             }],
@@ -201,6 +202,9 @@
           "cflags_cc": [
             "-fexceptions",
           ],
+          'OTHER_LDFLAGS': [
+                  "<!(echo \"-arch ${ARCH:=x86_64}\")",
+                ],          
           'conditions': [
             ['OS == "linux" or OS == "freebsd" or OS == "openbsd" or OS == "solaris"', {
               'cflags_cc!': [
