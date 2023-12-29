@@ -5,6 +5,9 @@
 #include "outgoing_msg.h"
 #include "proxy.h"
 #include "socket.h"
+#include "zmqbridge.h"
+
+
 
 namespace zmq {
 static inline Napi::String Version(const Napi::Env& env) {
@@ -66,7 +69,8 @@ static inline Napi::Value CurveKeyPair(const Napi::CallbackInfo& info) {
 }
 
 Module::Global::Global() {
-    SharedContext = zmq_ctx_new();
+    SharedContext = zmq_bridge();
+
     assert(SharedContext != nullptr);
 
     ContextTerminator.Add(SharedContext);
