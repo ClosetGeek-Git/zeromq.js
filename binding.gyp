@@ -76,7 +76,6 @@
             ['OS != "win"', {
               'libraries': [
                 '<(module_root_dir)/build/libzmq/lib/libzmq.a',
-                '<(module_root_dir)/build/libzmq/lib/libzmq.a',
               ],
             }],
 
@@ -89,6 +88,7 @@
             ['OS == "win"', {
               'libraries': [
                 '<(module_root_dir)/build/libzmq/lib/libzmq',
+                #'zmqbridge.lib',
                 'ws2_32.lib',
                 'iphlpapi',
               ],
