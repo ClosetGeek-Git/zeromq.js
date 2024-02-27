@@ -6,7 +6,7 @@ std::mutex m;
 
 void *_zmq_bridge = NULL;
 
-void *zmq_bridge() {
+ZMQ_BRIDGE_API void *zmq_bridge() {
     std::scoped_lock lock(m);
 
     if (_zmq_bridge == NULL) {
