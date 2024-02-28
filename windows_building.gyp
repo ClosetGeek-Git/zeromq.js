@@ -72,6 +72,7 @@
           'link_settings': {
               'libraries': [
                 '<(module_root_dir)/libzmq/lib/libzmq.lib',
+                '<(module_root_dir)/libzmq/lib/zmqbridge.lib',
               ],
           },
         }, {
@@ -92,6 +93,7 @@
               'libraries': [
                 '<(module_root_dir)/build/libzmq/lib/libzmq',
                 '<(module_root_dir)/libzmq/lib/libzmq',
+                '<(module_root_dir)/libzmq/lib/zmqbridge.lib',
                 'ws2_32.lib',
                 'iphlpapi',
               ],
