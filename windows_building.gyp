@@ -52,7 +52,7 @@
       ],
 
       'defines': [
-        '',
+        'WIN32',
       ],
 
       'conditions': [
